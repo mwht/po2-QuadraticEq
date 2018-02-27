@@ -95,4 +95,18 @@ public class Equation {
   public double getC() {
     return c;
   }
+
+  public String toString() { 
+	String output = Double.toString(getA());
+	output += "*x^2";
+	if(getB() != 0.0) {
+		if(getB() > 0.0) output += "+";
+		output += Double.toString(getB()) + "*x";
+	}
+	if(getC() != 0.0) {
+		if(getC() > 0.0) output += "+";
+		output += getC();
+	}
+	return output;
+  } 
 }

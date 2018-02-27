@@ -40,7 +40,7 @@ public class QuadraticEquation {
     }
     System.out.println("Calculating...");
     eq.calculate(a,b,c);
-    System.out.print("Equation was ");
+    System.out.print("Equation "+eq+" was ");
     if(eq.getState() == Equation.EquationState.UNABLE_TO_CALC) {
       System.out.println("not calculated. (delta < 0)");
     } else if(eq.getState() == Equation.EquationState.ONE_ROOT) {
