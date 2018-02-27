@@ -15,6 +15,7 @@ public class Equation {
   private double root1; // first root from equation
   private double root2; // second root from equation
   private EquationState state; // state after calculating the equation
+  private String detailedError; // detailed error
 
   public Equation() {
     a = 0;
@@ -34,21 +35,29 @@ public class Equation {
   }
 
   public boolean calculate() {
-    // calculate delta
-    delta = (b*b) - 4*a*c;
+    if(a == 0.0) {
+      state = EquationState.NOT_CALCULATED;
+      detailedError = "a = 0, formula not appliable";
+      return false;
+    }
+    delta = (b*b) - 4.0*a*c;
     if(delta > 0.0) {
-      root1 = (-b-delta)/(2*a);
-      root2 = (-b-delta)/(2*a);
+      root1 = ((-b)-delta)/(2.0*a);
+      root2 = ((-b)+delta)/(2.0*a);
       state = EquationState.TWO_ROOTS;
       return true;
     } else if(delta == 0.0) {
-      root1 = -b/(2*a);
+      root1 = -b/(2.0*a);
       state = EquationState.ONE_ROOT;
       return true;
     } else {
       state = EquationState.UNABLE_TO_CALC;
       return false;
     }
+  }
+
+  public String getDetailedError() {
+    return detailedError;
   }
 
   public EquationState getState() {

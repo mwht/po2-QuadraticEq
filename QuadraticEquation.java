@@ -13,7 +13,9 @@ public class QuadraticEquation {
 
   public static void main(String[] args) {
     Equation eq = new Equation();
-    double a,b,c;
+    Double a;
+    Double b;
+    Double c;
     if(args.length == 0) {
       printUsage(true);
       return;
@@ -44,7 +46,9 @@ public class QuadraticEquation {
     } else if(eq.getState() == Equation.EquationState.ONE_ROOT) {
       System.out.println("calculated, one root was found: "+eq.getFirstRoot());
     } else if(eq.getState() == Equation.EquationState.TWO_ROOTS) {
-      System.out.println("calculated, two root were found: "+eq.getFirstRoot()+" and "+eq.getSecondRoot());
+      System.out.println("calculated, two roots were found: "+eq.getFirstRoot()+" and "+eq.getSecondRoot());
+    } else {
+      System.out.println("not calculated - another error occured ("+eq.getDetailedError()+")");
     }
   }
 }
