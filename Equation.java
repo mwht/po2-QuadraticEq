@@ -55,11 +55,11 @@ public class Equation {
     return state;
   }
 
-  public void getFirstRoot() {
+  public double getFirstRoot() {
     return root1;
   }
 
-  public void getSecondRoot() {
+  public double getSecondRoot() {
     return root2;
   }
 
