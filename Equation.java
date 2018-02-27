@@ -51,6 +51,18 @@ public class Equation {
     }
   }
 
+  public EquationState getState() {
+    return state;
+  }
+
+  public void getFirstRoot() {
+    return root1;
+  }
+
+  public void getSecondRoot() {
+    return root2;
+  }
+
   public void setA(double newA) {
     a = newA;
   }
