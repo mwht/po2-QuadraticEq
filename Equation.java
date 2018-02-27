@@ -42,8 +42,8 @@ public class Equation {
     }
     delta = (b*b) - 4.0*a*c;
     if(delta > 0.0) {
-      root1 = ((-b)-delta)/(2.0*a);
-      root2 = ((-b)+delta)/(2.0*a);
+      root1 = ((-b)-Math.sqrt(delta))/(2.0*a);
+      root2 = ((-b)+Math.sqrt(delta))/(2.0*a);
       state = EquationState.TWO_ROOTS;
       return true;
     } else if(delta == 0.0) {
