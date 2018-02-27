@@ -12,7 +12,7 @@ public class QuadraticEquation {
   }
 
   public static void main(String[] args) {
-    Equation eq;
+    Equation eq = new Equation();
     double a,b,c;
     if(args.length == 0) {
       printUsage(true);
@@ -39,6 +39,12 @@ public class QuadraticEquation {
     System.out.println("Calculating...");
     eq.calculate(a,b,c);
     System.out.print("Equation was ");
-    if(eq.get)
+    if(eq.getState() == Equation.EquationState.UNABLE_TO_CALC) {
+      System.out.println("not calculated. (delta < 0)");
+    } else if(eq.getState() == Equation.EquationState.ONE_ROOT) {
+      System.out.println("calculated, one root was found: "+eq.getFirstRoot());
+    } else if(eq.getState() == Equation.EquationState.TWO_ROOTS) {
+      System.out.println("calculated, two root were found: "+eq.getFirstRoot()+" and "+eq.getSecondRoot());
+    }
   }
 }
