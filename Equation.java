@@ -1,10 +1,10 @@
 /**
- * QuadraticEquation
- * @summary QuadraticEquation is class that calculates roots of quadratic equation (a*x^2+b*x+c) by given a, b, c
+ * Equation
+ * @summary Equation is class that calculates roots of quadratic equation (a*x^2+b*x+c) by given a, b, c
  * @author Sebastian Madejski
  */
-public class QuadraticEquation {
-  public enum QuadraticEquationState {
+public class Equation {
+  public enum EquationState {
     NOT_CALCULATED, UNABLE_TO_CALC, ONE_ROOT, TWO_ROOTS
   }
 
@@ -14,7 +14,7 @@ public class QuadraticEquation {
   private double delta; // delta calculated from equation
   private double root1; // first root from equation
   private double root2; // second root from equation
-  private QuadraticEquationState state; // state after calculating the equation
+  private EquationState state; // state after calculating the equation
 
   public QuadraticEquation() {
     a = 0;
@@ -23,7 +23,7 @@ public class QuadraticEquation {
     delta = 0;
     root1 = 0;
     root2 = 0;
-    state = QuadraticEquationState.NOT_CALCULATED;
+    state = EquationState.NOT_CALCULATED;
   }
 
   public boolean calculate(double newA, double newB, double newC) {
@@ -39,14 +39,14 @@ public class QuadraticEquation {
     if(delta > 0.0) {
       root1 = (-b-delta)/(2*a);
       root2 = (-b-delta)/(2*a);
-      state = QuadraticEquationState.TWO_ROOTS;
+      state = EquationState.TWO_ROOTS;
       return true;
     } else if(delta == 0.0) {
       root1 = -b/(2*a);
-      state = QuadraticEquationState.ONE_ROOT;
+      state = EquationState.ONE_ROOT;
       return true;
     } else {
-      state = QuadraticEquationState.UNABLE_TO_CALC;
+      state = EquationState.UNABLE_TO_CALC;
       return false;
     }
   }
