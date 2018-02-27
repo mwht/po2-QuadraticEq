@@ -16,7 +16,7 @@ public class Equation {
   private double root2; // second root from equation
   private EquationState state; // state after calculating the equation
 
-  public QuadraticEquation() {
+  public Equation() {
     a = 0;
     b = 0;
     c = 0;
