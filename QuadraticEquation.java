@@ -18,16 +18,16 @@ public class QuadraticEquation {
     Double c;
     if(args.length == 0) {
       printUsage(true);
-      return;
+      System.exit(1);
     }
     if(args.length < 3) {
       System.out.println("error: too few arguments - all a, b and c are required");
       printUsage(false);
-      return;
+      System.exit(1);
     } else if(args.length > 3) {
       System.out.println("error: too much arguments - only a, b and c are mandatory");
       printUsage(false);
-      return;
+      System.exit(1);
     }
 
     try {
