@@ -4,7 +4,7 @@
  */
 public class Equation {
   /**
-   * EquationState gives information about
+   * State of the ART (art = equation after attempt of calculation)
    */
   public enum EquationState {
     NOT_CALCULATED, UNABLE_TO_CALC, ONE_ROOT, TWO_ROOTS
@@ -46,6 +46,10 @@ public class Equation {
     return calculate();
   }
 
+  /**
+   * Calculate the equation by given set at runtime.
+   * @return state whether equation was calculated (true = success, false = failure)
+   */
   public boolean calculate() {
     if(a == 0.0) {
       state = EquationState.NOT_CALCULATED;
@@ -68,6 +72,10 @@ public class Equation {
     }
   }
 
+  /**
+   * Return last error occured during calculation.
+   * @return string with detailed error
+   */
   public String getDetailedError() {
     return detailedError;
   }
