@@ -1,9 +1,11 @@
 /**
- * Equation
- * @summary Equation is class that calculates roots of quadratic equation (a*x^2+b*x+c) by given a, b, c
+ * Equation is class that calculates roots of quadratic equation (a*x^2+b*x+c) by given a, b, c
  * @author Sebastian Madejski
  */
 public class Equation {
+  /**
+   * EquationState gives information about
+   */
   public enum EquationState {
     NOT_CALCULATED, UNABLE_TO_CALC, ONE_ROOT, TWO_ROOTS
   }
@@ -17,6 +19,9 @@ public class Equation {
   private EquationState state; // state after calculating the equation
   private String detailedError; // detailed error
 
+  /**
+   * constructor for class Equation
+   */
   public Equation() {
     a = 0;
     b = 0;
@@ -27,6 +32,13 @@ public class Equation {
     state = EquationState.NOT_CALCULATED;
   }
 
+  /**
+   * Calculate the equation by given parameters (a, b ,c)
+   * @param newA "a" parameter of equation
+   * @param newB "b" parameter of equation
+   * @param newC "c" parameter of equation
+   * @return state whether equation was calculated (true = success, false = failure)
+   */
   public boolean calculate(double newA, double newB, double newC) {
     setA(newA);
     setB(newB);
@@ -96,7 +108,7 @@ public class Equation {
     return c;
   }
 
-  public String toString() { 
+  public String toString() {
 	String output = Double.toString(getA());
 	output += "*x^2";
 	if(getB() != 0.0) {
@@ -108,5 +120,5 @@ public class Equation {
 		output += getC();
 	}
 	return output;
-  } 
+  }
 }
